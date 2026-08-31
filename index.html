@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flight Authorization Manager</title>
+<style>
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif; line-height: 1.8; max-width: 760px; margin: 0 auto; padding: 24px 20px 48px; color: #1b1f24; background: #fafcff; }
+  h1 { font-size: 1.6rem; border-bottom: 3px solid #1e6fe6; padding-bottom: 8px; }
+  h2 { font-size: 1.2rem; margin-top: 2em; color: #1e6fe6; }
+  .note { background: #fff7e6; border-left: 4px solid #f5a623; padding: 10px 14px; margin: 16px 0; }
+  .dl { display: inline-block; background: #1e6fe6; color: #fff; font-weight: 700; padding: 14px 28px; border-radius: 28px; text-decoration: none; margin: 8px 0; }
+  .dl:hover { background: #1859b8; }
+  .meta { color: #55616e; font-size: 0.9rem; }
+  ol li, ul li { margin: 4px 0; }
+  code { background: #eef2f7; padding: 1px 6px; border-radius: 4px; }
+  a { color: #1e6fe6; }
+</style>
+</head>
+<body>
+<h1>Flight Authorization Manager</h1>
+<p>ドローンの飛行許可・承認書（DIPS2.0発行のZIP）を取り込み、許可番号・期間・機体を一覧で管理し、期限が近づくと通知するAndroidアプリです。DIPS2.0の機体登録情報の有効期限もあわせて管理できます。<strong>データはすべて端末内に保存され、外部サーバーには送信されません。</strong></p>
+
+<div class="note">本アプリは個人が開発した<strong>非公式アプリ</strong>です。国土交通省およびDIPS2.0（ドローン情報基盤システム）とは一切関係がありません。期限通知は補助機能です。飛行許可・承認や機体登録の期限管理は、必ずご自身の責任で行ってください。</div>
+
+<h2>主な機能</h2>
+<ul>
+  <li>DIPS2.0にログインして、飛行許可・承認書を<strong>まとめて自動取り込み</strong>（ZIPファイルの手動選択も可）</li>
+  <li>許可番号・期間・飛行経路・機体一覧を自動で読み取り、一覧表示</li>
+  <li>残り日数の色分け表示（30日前・7日前・期限切れ）と<strong>期限通知</strong>（通知タイミングは自由に設定）</li>
+  <li>機体登録情報（登録記号・有効期限）の取り込みと期限管理</li>
+  <li>承認書・機体一覧の<strong>原本PDFをそのまま閲覧</strong></li>
+</ul>
+
+<h2>ダウンロード（β版）</h2>
+<p>
+  <a class="dl" href="https://github.com/pinocabo/flight-authorization-manager/releases/download/v0.9.0-beta14/FlightAuthorizationManager-0.9.0-beta14.apk">APKをダウンロード（v0.9.0-beta14）</a><br>
+  <span class="meta">約36MB / Android 8.0以上 / 2026-09-01更新 / <a href="https://github.com/pinocabo/flight-authorization-manager/releases">更新履歴</a></span>
+</p>
+<p class="meta">現在はGoogle Playを介さないβ版として配布しています（Google Play版を準備中）。</p>
+
+<h2>インストール手順</h2>
+<ol>
+  <li>上のボタンからAPKファイルをダウンロードする</li>
+  <li>ダウンロードしたファイルを開く（通知をタップ、またはファイルアプリの「ダウンロード」から）</li>
+  <li>「不明なアプリのインストール」の許可を求められたら、画面の案内に従って<strong>このアプリからのインストールを許可</strong>する（Google Playを介さないアプリのため表示されます）</li>
+  <li>「インストール」をタップして完了。Playプロテクトの確認が出た場合は「詳細」→「インストールする」を選択</li>
+</ol>
+
+<h2>利用に必要なもの</h2>
+<ul>
+  <li>Android 8.0以上のスマートフォン</li>
+  <li><strong>DIPS2.0のアカウント</strong>（ご自身の飛行許可・機体登録を取り込むため。アプリ内の画面からご自身でログインします）</li>
+</ul>
+
+<h2>既知の制限・注意事項</h2>
+<ul>
+  <li>許可・承認書の様式によっては一部の項目（期間・機体など）を読み取れないことがあります。その場合は詳細画面に「⚠ 取り込み時の警告」が表示され、<strong>手動で修正・入力できます</strong></li>
+  <li>機体名の空白が一部詰まって表示されることがあります（例:「DJI Avata 2」→「DJI Avata2」）</li>
+  <li>アンインストールすると端末内のデータは削除されます（Googleバックアップが有効な場合、再インストール時に許可証データが復元されることがあります。DIPS2.0のログイン情報はバックアップされません）</li>
+  <li>期限通知を確実に受け取るため、端末の省電力設定で本アプリを最適化（スリープ）対象から外すことをおすすめします</li>
+</ul>
+
+<h2>不具合報告・お問い合わせ</h2>
+<p>不具合を見つけたら、以下までご連絡ください。その際、次の情報を添えていただけると調査がスムーズです。</p>
+<ul>
+  <li>機種名とAndroidバージョン（例: Galaxy Z Flip6 / Android 16）</li>
+  <li>アプリのバージョン（メニュー画面左上に表示。例: v0.9.0-beta14）</li>
+  <li>起きたことと、そのとき行った操作</li>
+  <li>可能であれば画面のスクリーンショット（許可証の詳細画面に「⚠ 取り込み時の警告」が出ている場合は、その画面が特に役立ちます）。<strong>氏名・許可番号・登録記号などはマスクしていただいて構いません</strong></li>
+</ul>
+<ul>
+  <li>メール: <a href="mailto:pinocabo3180@gmail.com">pinocabo3180@gmail.com</a></li>
+  <li>GitHub: <a href="https://github.com/pinocabo/flight-authorization-manager/issues">Issues</a></li>
+</ul>
+
+<h2>ドキュメント</h2>
+<ul>
+  <li><a href="privacy.html">プライバシーポリシー</a></li>
+</ul>
+</body>
+</html>

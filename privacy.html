@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プライバシーポリシー | Flight Authorization Manager</title>
+<style>
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif; line-height: 1.8; max-width: 760px; margin: 0 auto; padding: 24px 20px 48px; color: #1b1f24; background: #fafcff; }
+  h1 { font-size: 1.5rem; border-bottom: 3px solid #1e6fe6; padding-bottom: 8px; }
+  h2 { font-size: 1.15rem; margin-top: 2em; color: #1e6fe6; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cfd8e3; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #eef4ff; }
+  .meta { color: #55616e; font-size: 0.9rem; }
+  a { color: #1e6fe6; }
+</style>
+</head>
+<body>
+<h1>プライバシーポリシー</h1>
+<p class="meta">対象アプリ: Flight Authorization Manager（Android）<br>制定日: 2026年8月30日</p>
+
+<p>Flight Authorization Manager（以下「本アプリ」）は、ドローンの飛行許可・承認書および機体登録情報の期限を端末内で管理するためのアプリです。本アプリの開発者（以下「開発者」）は、利用者のプライバシーを尊重し、以下の方針に基づいて本アプリを提供します。</p>
+
+<h2>1. 基本方針：データは端末内にのみ保存されます</h2>
+<p>本アプリが取り扱うすべてのデータ（許可・承認書のZIPファイルとPDF、読み取った許可番号・期間・機体情報、機体登録情報、通知設定、DIPS2.0のログイン情報）は、<strong>利用者の端末内にのみ保存</strong>されます。開発者はサーバーを運用しておらず、これらのデータを収集・受信・閲覧することはありません。</p>
+
+<h2>2. 本アプリが端末内で扱う情報</h2>
+<table>
+  <tr><th>情報</th><th>取得方法</th><th>保存場所・保護</th><th>利用目的</th></tr>
+  <tr><td>飛行許可・承認書（ZIP/PDF）とその読み取り結果（許可番号、期間、飛行経路、飛行させる者、発行日・発行者、機体情報）</td><td>利用者が選択したファイル、またはDIPS2.0から利用者自身の操作でダウンロード</td><td>端末内のアプリ専用領域</td><td>一覧・詳細表示、期限の計算と通知</td></tr>
+  <tr><td>機体登録情報（登録記号、機体名、製造者、有効期限など）</td><td>DIPS2.0に利用者自身がログインした画面から読み取り</td><td>端末内のアプリ専用領域</td><td>一覧表示、期限の通知</td></tr>
+  <tr><td>DIPS2.0のログインID・パスワード</td><td>利用者がログイン時に保存を選択した場合のみ</td><td>Android Keystoreで暗号化した端末内保存。<strong>端末のバックアップ対象から除外</strong>。アプリ内の操作でいつでも削除可能</td><td>次回ログイン時の自動入力（送信は利用者がログインボタンを押したときのみ）</td></tr>
+  <tr><td>通知設定・通知履歴・表示設定</td><td>利用者の操作</td><td>端末内</td><td>期限通知、履歴表示</td></tr>
+</table>
+
+<h2>3. 通信について</h2>
+<p>本アプリが行う通信は以下に限られます。</p>
+<ul>
+  <li><strong>DIPS2.0（国土交通省 ドローン情報基盤システム、<code>*.mlit.go.jp</code>）への接続</strong>：利用者が「DIPS2.0から取得」等の操作を行ったときのみ、アプリ内ブラウザ（WebView）を通じて、利用者自身のアカウントで接続します。送信されるのは利用者がDIPS2.0に入力・操作した内容であり、通常のWebブラウザでDIPS2.0を利用する場合と同じです。バックグラウンドでの接続や定期的な自動アクセスは行いません。</li>
+  <li><strong>更新確認（ストア以外で配布する版のみ）</strong>：新しいバージョンの有無を確認するため、開発者が公開する版数情報ファイルを取得することがあります。この際に端末から個人を特定できる情報は送信されません。</li>
+</ul>
+<p>上記以外に、開発者や第三者のサーバーへ情報を送信することはありません。広告配信、アクセス解析、クラッシュレポートの外部送信も行っていません。</p>
+
+<h2>4. 権限</h2>
+<table>
+  <tr><th>権限</th><th>用途</th></tr>
+  <tr><td>通知（POST_NOTIFICATIONS）</td><td>許可・承認や機体登録の期限が近づいたことをお知らせするため。拒否しても他の機能は利用できます</td></tr>
+  <tr><td>インターネット（INTERNET）</td><td>DIPS2.0への接続、および更新確認のため</td></tr>
+</table>
+<p>連絡先、位置情報、カメラ、マイク、ストレージ全体へのアクセス等の権限は要求しません。ファイルの選択はAndroid標準のファイル選択画面を通じて、利用者が選んだファイルのみを読み取ります。</p>
+
+<h2>5. 第三者への提供</h2>
+<p>開発者が利用者の情報を第三者に提供することはありません（開発者は情報を保持していません）。</p>
+
+<h2>6. データの削除</h2>
+<p>アプリ内の削除操作、またはアプリのアンインストールにより、端末内のデータはすべて削除されます。DIPS2.0のログイン情報はアプリ内のメニューから個別に削除できます。</p>
+
+<h2>7. 免責事項・非公式アプリであることの表明</h2>
+<p>本アプリは個人が開発した<strong>非公式アプリ</strong>であり、国土交通省およびDIPS2.0とは一切関係がありません。期限通知は補助機能であり、飛行許可・承認や機体登録の期限管理は利用者ご自身の責任で行ってください。本アプリが読み取った内容は必ず原本のPDFやDIPS2.0の表示で確認してください。本アプリの利用により生じた損害について、開発者は責任を負いません。</p>
+
+<h2>8. 本ポリシーの変更</h2>
+<p>本ポリシーを変更する場合は、本ページで公表します。重要な変更がある場合はアプリの更新情報でもお知らせします。</p>
+
+<h2>9. お問い合わせ</h2>
+<p>本アプリおよび本ポリシーに関するお問い合わせは、以下までお願いします。</p>
+<ul>
+  <li>メール: <a href="mailto:pinocabo3180@gmail.com">pinocabo3180@gmail.com</a></li>
+  <li>GitHub: <a href="https://github.com/pinocabo/flight-authorization-manager/issues">https://github.com/pinocabo/flight-authorization-manager/issues</a></li>
+</ul>
+<p class="meta">開発者: Flight Authorization Manager 開発チーム（個人開発）</p>
+</body>
+</html>
